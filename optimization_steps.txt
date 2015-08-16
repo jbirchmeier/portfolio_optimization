@@ -1,0 +1,19 @@
+Steps I took to optimize page speed: 
+
+- minify all CSS
+- minify all JS
+These two steps brought me up to between a 60-70 page score
+
+- move JS script to bottom of html
+- minimize images with grunt imagemin
+- optimize images with ImageOptim
+Once I optimized my images my score increased to low 80’s
+
+
+- inline all css/js with grunt
+So close! 91 on mobile but only 88 on desktop
+
+- compress files with grunt
+
+for pizza.html: 
+- adjusted two for loops to lower total pizza images on the page and speed up loading and scrolling; see comments in main.js
