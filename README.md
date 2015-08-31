@@ -1,30 +1,39 @@
+Udacity Front End Developer Nanodegree - Project 5: Portfolio Optimization
+08/31/2015
+
 Hello!
 
-My task was to take this website (which is not a public site, only here on Github) and optimize the page speed and performance. 
-You can follow any of the links on this website to view various projects or a fake pizza website!
+My task was to take this course website hosted at https://github.com/udacity/frontend-nanodegree-mobile-portfolio and optimize the page speed and performance. 
 
-In order to optimize the site, these are the steps I took: 
+My first task was to score above a 90 on Google PageSpeed Insights (https://developers.google.com/speed/pagespeed/insights/) 
+
+In order to optimize the site I used the following tools:
+ - Grunt (gruntjs.com)
+ - ImageOptim (imageoptim.com)
+
 Steps I took to optimize page speed: 
+	Running Grunt from the Mac Terminal: 
+	- minify all CSS (cssmin)
+	- minify all JS (uglify)
+	- inline all css/js (smoosher)
+	You can find instructions for downloading and getting started with Grunt at http://gruntjs.com/getting-started 
+	Note that you will also need to download node.js to run Grunt
 
-- minify all CSS
-- minify all JS
-These two steps brought me up to between a 60-70 page score
+	Within index.html:
+	- move JS script to bottom of html
+	-used google web fonts loader instead of linking directly
+	Optimizing Images:
+	- minimize images with grunt imagemin (imagemin)
+	- optimize images with ImageOptim
+	- resize pizza images manually with Mac preview
 
-- move JS script to bottom of html
-- minimize images with grunt imagemin
-- optimize images with ImageOptim
-- resize pizza images
-Once I optimized my images my score increased to low 80’s
+The second task was to increase optimization and pagespeed in views/pizza.html. 
 
-- inline all css/js with grunt
+Steps I took to optimize pizza.html:
+	Within pizza.html: 
+	-minified HTML using Grunt & the terminal
 
--used google web fonts loader instead of linking directly
-Okay on desktop but not quite there on mobile…
-
--found the one image that hadn’t been reduced to match it’s maximum display size and reduced it with Preview for Mac
-
-for pizza.html: 
-- adjusted two for loops to lower total pizza images on the page and speed up loading and scrolling; see comments in main.js
-- changed some ‘querySelector’ to ‘getElementById’ or ‘getElementsByClassName’
-- moved some variables from inside for loops to outside to increase efficiency; see js files for comments on which loops were adjusted
+	Within views/js/main.js: 
+	- changed ‘querySelector’ to ‘getElementById’ or ‘getElementsByClassName’ - see comments in main.js
+	- moved variable declarations from inside for loops to outside to increase efficiency on lines 455-458, 479, 511-515, 536-541; 
 
